@@ -1,7 +1,14 @@
 body {
   height: 100vh;
+  /* background: radial-gradient(#fff, #9a9b9c); */
+  background-image: url("./imgs/Olloqui_Background_less.png");
+  font-family: sans-serif;
 }
 
 .App {
-  
+  margin-top: 2%;
+  box-shadow: -5px 20px 10px 0 black;
+  background-color: white;
+  border: 2px solid #9a9b9c;
+  border-radius: 10px;
 }

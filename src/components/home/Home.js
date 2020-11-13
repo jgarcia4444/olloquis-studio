@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Logo from '../../imgs/Logo.png';
 import './Home.css';
+import Lashes from '../../imgs/Lashes.jpeg'
 
 class Home extends Component {
 
@@ -11,6 +12,36 @@ class Home extends Component {
                 <div className="row text-center">
                     <div className="col-12 logo-col">
                         <img className="logo" src={Logo} alt="Logo" />
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-6">
+                        <div className="container home-intro-container">
+                            <div className="row">
+                                <div className="col-12">
+                                   <h2 id="intro-container-header">
+                                       Eyelash Extensions
+                                   </h2> 
+                                   <p id="intro-container-paragraph">
+                                   If applied properly, they are safe and do not ruin your natural lash. Eyelash extensions instantly enhance your eyes, in fact with proper care they can last up to 3/4 weeks.
+                                   </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-6">
+                        <div className="container home-guarantee-container ">
+                            <div className="row text-center">
+                                <div className="col-12">
+                                    <img className="lashes-img" src={Lashes} alt="Lashes example"/>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="col-12">
+                                    
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
