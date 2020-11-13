@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 import './NavContainer.css';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 class NavContainer extends Component {
 
     state = {
-        route: ""
+        activeLinkName: ""
+    }
+
+    handleNavClick = (name) => {
+        this.setState({
+            ...this.state,
+            activeLinkName: name
+        })
     }
 
     formatNameAttribute = (option) => {
@@ -23,8 +30,8 @@ class NavContainer extends Component {
         return navOptions.map(option => {
             let nameAttribute = this.formatNameAttribute(option)
             return (
-                <div key={nameAttribute} name={nameAttribute} className="col-3">
-                    <Link to={"/" + nameAttribute}>{option}</Link>
+                <div key={nameAttribute} className="col-3">
+                    <Link name={nameAttribute} onClick={(name) => this.handleNavClick(nameAttribute)} className={this.state.activeLinkName === nameAttribute ? "nav-links active" : "nav-links"} to={"/" + nameAttribute}>{option}</Link>
                 </div>
             )
         })
@@ -35,7 +42,7 @@ class NavContainer extends Component {
         const navOptions = ["Home", "Book Online", "Shop", "Training"]
 
         return (
-            <div className="row nav-container-row text-center"> 
+            <div className="row text-center nav-container-row"> 
                 {this.renderNavLinks(navOptions)}
             </div>
         )
