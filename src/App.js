@@ -10,6 +10,8 @@ import {
   Route
 } from 'react-router-dom';
 import NavContainer from './components/nav/NavContainer';
+import AboutContainer from './components/about/AboutContainer';
+import ContactContainer from './components/contact/ContactContainer';
 
 class App extends Component {
 
@@ -28,6 +30,12 @@ class App extends Component {
             </Route>
             <Route path="/shop">
               <ShopContainer />
+            </Route>
+            <Route path="/about">
+              <AboutContainer />
+            </Route>
+            <Route path="/contact">
+              <ContactContainer />
             </Route>
             <Route path="/">
               <Home />

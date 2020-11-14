@@ -14,7 +14,7 @@ class Home extends Component {
                         <img className="logo" src={Logo} alt="Logo" />
                     </div>
                 </div>
-                <div className="row">
+                <div className="row home-main-container">
                     <div className="col-6">
                         <div className="container home-intro-container">
                             <div className="row">
@@ -36,9 +36,10 @@ class Home extends Component {
                                     <img className="lashes-img" src={Lashes} alt="Lashes example"/>
                                 </div>
                             </div>
-                            <div className="row">
+                            <div className="row guarantee-details-row">
                                 <div className="col-12">
-                                    
+                                    <h5 id="guarantee-details">YOUR NEW FAVORITE LASH APPLICATION</h5>
+                                    <h3 id="guarantee-header">GUARANTEED!</h3>
                                 </div>
                             </div>
                         </div>
