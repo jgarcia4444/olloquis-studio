@@ -6,8 +6,19 @@ class BookOnlineContainer extends Component {
     render() {
 
         return (
-            <div className="container book-online-container">
-                Book Online Container
+            <div className="container-fluid book-online-container">
+                <div className="row text-center book-online-title-row">
+                    <div className="col-12">
+                        <h1 id="book-online-title">Book Online</h1>
+                    </div>
+                </div>
+                <div className="row text-center book-online-details-row">
+                    <div className="col-6 book-online-details-col">
+                        <p id="book-online-details">
+                            Book an appointment conveniently below.
+                        </p>
+                    </div>
+                </div>
             </div>
         )
     }

@@ -1,9 +1,12 @@
 .nav-container-row {
-    padding-top: 5%;
+    padding: 1%;
+    background-color: #9a9c9b;
 }
 
 .nav-links {
     color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 0.8rem;
 }
 
 .nav-links:hover {
@@ -15,6 +18,7 @@
     animation-name: Nav-Link-Border-Animation;
     animation-duration: 0.25s;
     text-decoration: none;
+    background-color: #fff;
 }
 
 .active {
