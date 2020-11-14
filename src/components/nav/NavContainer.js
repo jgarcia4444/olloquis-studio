@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 class NavContainer extends Component {
 
     state = {
-        activeLinkName: "home"
+        activeLinkName: ""
     }
 
     handleNavClick = (name) => {

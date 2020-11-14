@@ -1,0 +1,28 @@
+
+#headshot {
+    border-radius: 50%;
+    box-shadow: -2px 7px 10px 0 #000;
+}
+
+.About {
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+#about-name {
+    font-weight: 800;
+}
+
+#about-title {
+    font-weight: 100;
+    margin-bottom: 5%;
+}
+
+#about-title-row {
+    margin-top: 0%;
+}
+
+#about-info {
+    font-size: 1.15rem;
+    font-weight: 300;
+}
