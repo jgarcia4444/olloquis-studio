@@ -41,6 +41,12 @@
     animation-duration: .8s;
 }
 
+.book-now-button:active {
+    border: none;
+    box-shadow: none;
+    animation: none;
+}
+
 @keyframes Book-Now-Button-Animation {
     33% {
         border-bottom: 5px solid #000;

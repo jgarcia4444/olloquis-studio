@@ -6,10 +6,10 @@ class AppointmentType extends Component {
 
 
     renderLashServices = (lashServices) => {
-        return lashServices.map(service => {
+        return lashServices.map((service, i) => {
             return (
-                <div className="row lash-service-container-row">
-                    <Service service={service} />
+                <div key={i} className="row lash-service-container-row">
+                    <Service handleServiceClick={this.props.handleServiceSelection} service={service} />
                 </div>
                 
             )

@@ -64,7 +64,7 @@ class Service extends Component {
                         </div>
                     </div>
                     <div className="col-4 text-center">
-                        <button className="book-now-button">Book Now</button>
+                        <button onClick={() => this.props.handleServiceClick(this.props.service)} className="book-now-button">Book Now</button>
                     </div>
                 </div>
             </div>

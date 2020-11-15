@@ -6,7 +6,15 @@ import AppointmentType from './appointmentType/AppointmentType';
 class BookOnlineContainer extends Component {
 
     state = {
-        appointmentDetailsStep: "type"
+        appointmentDetailsStep: "type",
+        service: {}
+    }
+
+    setServiceSelection = (service) => {
+        this.setState({
+            ...this.state,
+            service: service
+        })
     }
 
     render() {
@@ -33,7 +41,7 @@ class BookOnlineContainer extends Component {
                 </div>
                 <div className="row book-online-appointemt-row">
                     <div className="col-12 book-online-appointment-col">
-                        <AppointmentInfoContainer />
+                        <AppointmentInfoContainer handleServiceSelection={this.setServiceSelection} />
                     </div>
                 </div>
             </div>
