@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Service from './service/Service';
+import './AppointmentType.css';
 
 class AppointmentType extends Component {
 
@@ -7,7 +8,10 @@ class AppointmentType extends Component {
     renderLashServices = (lashServices) => {
         return lashServices.map(service => {
             return (
-                <Service service={service} />
+                <div className="row lash-service-container-row">
+                    <Service service={service} />
+                </div>
+                
             )
         })
     }
@@ -99,18 +103,18 @@ class AppointmentType extends Component {
 
         return (
             <div className="container appointment-type-container">
-                <div className="row appointment-type-row">
-                    <div className="col-6">
+                <div className="row appointment-type-title-row">
+                    <div className="col-12">
                         <h4 id="appointent-type-direction">
                             Pick an appointment type
                         </h4>
-                        <p id="appointment-type-direction-details">
-                            Pick an option to the right and you 
-                        </p>
                     </div>
-                    <div className="col-6">
+                </div>
+                <div className="row lash-services-container-row">
+                    <div className="container lash-services-container">
                         {this.renderLashServices(lashServices)}
                     </div>
+
                 </div>
             </div>
         )

@@ -32,7 +32,7 @@ class BookOnlineContainer extends Component {
                     </div>
                 </div>
                 <div className="row book-online-appointemt-row">
-                    <div className="book-online-appointment-col">
+                    <div className="col-12 book-online-appointment-col">
                         <AppointmentInfoContainer />
                     </div>
                 </div>
