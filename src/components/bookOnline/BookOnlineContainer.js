@@ -1,9 +1,21 @@
 import React, { Component } from 'react';
 import './BookOnlineContainer.css';
+import Calendar from '../../imgs/Calendar_Example.jpeg';
+import AppointmentType from './appointmentType/AppointmentType';
 
 class BookOnlineContainer extends Component {
 
+    state = {
+        appointmentDetailsStep: "type"
+    }
+
     render() {
+
+        var AppointmentInfoContainer;
+
+        if (this.state.appointmentDetailsStep === "type") {
+            AppointmentInfoContainer = AppointmentType;
+        }
 
         return (
             <div className="container-fluid book-online-container">
@@ -17,6 +29,11 @@ class BookOnlineContainer extends Component {
                         <p id="book-online-details">
                             Book an appointment conveniently below.
                         </p>
+                    </div>
+                </div>
+                <div className="row book-online-appointemt-row">
+                    <div className="book-online-appointment-col">
+                        <AppointmentInfoContainer />
                     </div>
                 </div>
             </div>
