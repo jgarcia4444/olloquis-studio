@@ -2,19 +2,37 @@ import React, { Component } from 'react';
 import './BookOnlineContainer.css';
 import Calendar from '../../imgs/Calendar_Example.jpeg';
 import AppointmentType from './appointmentType/AppointmentType';
+import DateTimeSelector from './dateTime/DateTimeSelector';
+import UserInfo from './userInfo/UserInfo';
 
 class BookOnlineContainer extends Component {
 
     state = {
         appointmentDetailsStep: "type",
-        service: {}
+        service: {},
+        loading: false
     }
 
     setServiceSelection = (service) => {
         this.setState({
             ...this.state,
-            service: service
+            appointmentDetailsStep: "dateTime",
+            service: service,
+            loading: true
         })
+    }
+
+    renderAppointmentInfoContainer = () => {
+        switch(this.state.appointmentDetailsStep) {
+            case "type":
+                return <AppointmentType handleServiceSelection={this.setServiceSelection}/>
+            case "dateTime":
+                return <DateTimeSelector />
+            case "userInfo":
+                return <UserInfo />
+            default:
+                return <AppointmentType />
+        }
     }
 
     render() {
@@ -47,7 +65,7 @@ class BookOnlineContainer extends Component {
                 </div>
                 <div className="row book-online-appointemt-row">
                     <div className="col-12 book-online-appointment-col">
-                        <AppointmentInfoContainer handleServiceSelection={this.setServiceSelection} />
+                        {this.renderAppointmentInfoContainer()}
                     </div>
                 </div>
             </div>
