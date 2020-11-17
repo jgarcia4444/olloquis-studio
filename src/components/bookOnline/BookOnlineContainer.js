@@ -18,13 +18,19 @@ class BookOnlineContainer extends Component {
     }
 
     render() {
-
         var AppointmentInfoContainer;
 
         if (this.state.appointmentDetailsStep === "type") {
             AppointmentInfoContainer = AppointmentType;
-        }
+            
+            
+        } else if (this.state.appointmentDetailsStep === "dateTime") {
 
+        } else if (this.state.appointmentDetailsStep === "userInfo") {
+
+        } else {
+
+        }
         return (
             <div className="container-fluid book-online-container">
                 <div className="row text-center book-online-title-row">
@@ -46,6 +52,8 @@ class BookOnlineContainer extends Component {
                 </div>
             </div>
         )
+
+        
     }
 }
 
