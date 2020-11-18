@@ -11,6 +11,14 @@ class Calendar extends Component {
     }
 
     componentDidMount() {
+        let dates = this.getSevenDays(this.state.todaysDate)
+        this.setState({
+            ...this.state,
+            dates: dates
+        })
+    }
+
+    getSevenDays = (startDate) => {
         var dates = [this.state.todaysDate]
         for (let i = 0; i < 7; i++) {
             let previousDate = new Date(dates[i])
@@ -18,19 +26,23 @@ class Calendar extends Component {
             let newDate = new Date(newUTC)
             dates.push(newDate)
         }
-        this.setState({
-            ...this.state,
-            dates: dates
-        })
+        return dates
     }
 
 
     render() {
-
         return (
             <div className="container calendar-container">
-                    <CalendarControls />
-                    <CalendarRow />
+                <div className="row calendar-container-row">
+                    <div className="col-9">
+                        <CalendarControls />
+                        <CalendarRow dates={this.state.dates} />
+                    </div>
+                    <div className="col-3">
+                        Time Listing
+                    </div>
+                </div>
+                    
             </div>
         )
     }

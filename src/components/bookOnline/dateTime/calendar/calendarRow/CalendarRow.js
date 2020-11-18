@@ -4,18 +4,17 @@ import CalendarBox from './calendarBox/CalendarBox'
 
 class CalendarRow extends Component {
 
-    // renderRow = () => {
-    //     return this.props.dates.map(date => {
-    //         return <CalendarBox date={date} />
-    //     })
-    // }
+    renderRow = () => {
+        return this.props.dates.map((date, i) => {
+            return <CalendarBox date={date} key={i} />
+        })
+    }
 
     render() {
 
         return (
-            <div className="container calendar-row-container">
-                {/* {this.renderRow()} */}
-                Hola
+            <div className="row calendar-row-container">
+                {this.renderRow()}
             </div>
         )
     }
