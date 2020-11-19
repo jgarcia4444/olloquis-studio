@@ -29,33 +29,49 @@ class Calendar extends Component {
         })
     }
 
+    monthsMatching = (firstDate, secondDate) => {
+        let startDateMonth = firstDate.getMonth()
+        let todaysDateMonth = secondDate.getMonth()
+        if (startDateMonth === todaysDateMonth) {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    sevenDaysToCurrentDay = (firstDate, secondDate) => {
+        let startDateNum = firstDate.getDate()
+        let todaysDateNum = secondDate.getDate()
+        if (startDateNum - todaysDateNum > 5) {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    getPreviousSevenDays = (startDate) => {
+        let newStartDate = new Date(startDate)
+        newStartDate.setDate(newStartDate.getDate() - 7)
+        this.getSevenDays(newStartDate)
+    }
+
     handleControlClick = (value) => {
        if (value === "back") {
            let { startDate } = this.state
            let todaysDate = new Date()
-           let startDateMonth = startDate.getMonth()
-           let todaysDateMonth = todaysDate.getMonth()
-           let startDateNum = startDate.getDate()
-           let todaysDateNum = todaysDate.getDate()
-           if (startDateMonth === todaysDateMonth) {
-                if (startDateNum - todaysDateNum > 5) {
-                    let newStartDate = new Date(startDate)
-                    newStartDate.setDate(newStartDate.getDate() - 7)
-                    this.getSevenDays(newStartDate)
+           if (this.monthsMatching(startDate, todaysDate)) {
+                if (this.sevenDaysToCurrentDay(startDate, todaysDate)) {
+                    this.getPreviousSevenDays(startDate)
                 } else {
-                    let newStartDate = new Date()
-                    this.getSevenDays(newStartDate)
+                    this.getSevenDays(todaysDate)
                 }
            } else {
-                let newStartDate = new Date(startDate)
-                newStartDate.setDate(newStartDate.getDate() - 7)
-                this.getSevenDays(newStartDate)
+                this.getPreviousSevenDays(startDate)
            }
-           
        } else if (value === "next") {
-           let { dates } = this.state
-           let newStartDate = new Date(dates[dates.length - 1])
-           newStartDate.setDate(newStartDate.getDate() + 1)
+           let { startDate } = this.state
+           let newStartDate = new Date(startDate)
+           newStartDate.setDate(newStartDate.getDate() + 7)
            this.getSevenDays(newStartDate)
        }
     }
