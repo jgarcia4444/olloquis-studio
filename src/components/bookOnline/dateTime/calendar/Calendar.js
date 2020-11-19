@@ -80,15 +80,11 @@ class Calendar extends Component {
         return (
             <div className="container calendar-container">
                 <div className="row calendar-container-row">
-                    <div className="col-8">
+                    <div className="col-12">
                         <CalendarControls handleControlClick={this.handleControlClick} />
                         <CalendarRow dates={this.state.dates} />
                     </div>
-                    <div className="col-4">
-                        Time Listing
-                    </div>
                 </div>
-                    
             </div>
         )
     }

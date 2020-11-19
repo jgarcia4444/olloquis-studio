@@ -9,8 +9,15 @@ class DateTimeSelector extends Component {
 
         return (
             <div className="container date-time-container">
-                <h1>Date Time Selector</h1>
-                <Calendar />
+                <h2 id="calendar-heading">Appointment Calendar</h2>
+                <div className="row calendar-and-time-row">
+                    <div className="col-9">
+                        <Calendar />
+                    </div>
+                    <div className="col-3">
+                        Time Listing
+                    </div>
+                </div>
             </div>
         )
     }
