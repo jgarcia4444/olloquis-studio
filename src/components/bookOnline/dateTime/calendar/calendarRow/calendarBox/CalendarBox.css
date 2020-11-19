@@ -1,6 +1,7 @@
 .calendar-box-container {
-    width: 10%;
-    height: 100px;
-    background-color: red;
+    width: 14.28%;
+    height: 75px;
+    background-color: #fff;
     font-size: 0.75rem;
+    border: 1px solid black;
 }

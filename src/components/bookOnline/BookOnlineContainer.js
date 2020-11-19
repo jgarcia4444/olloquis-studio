@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './BookOnlineContainer.css';
-import Calendar from '../../imgs/Calendar_Example.jpeg';
+// import Calendar from '../../imgs/Calendar_Example.jpeg';
 import AppointmentType from './appointmentType/AppointmentType';
 import DateTimeSelector from './dateTime/DateTimeSelector';
 import UserInfo from './userInfo/UserInfo';
@@ -36,19 +36,7 @@ class BookOnlineContainer extends Component {
     }
 
     render() {
-        var AppointmentInfoContainer;
-
-        if (this.state.appointmentDetailsStep === "type") {
-            AppointmentInfoContainer = AppointmentType;
-            
-            
-        } else if (this.state.appointmentDetailsStep === "dateTime") {
-
-        } else if (this.state.appointmentDetailsStep === "userInfo") {
-
-        } else {
-
-        }
+        
         return (
             <div className="container-fluid book-online-container">
                 <div className="row text-center book-online-title-row">

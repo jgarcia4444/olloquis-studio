@@ -1,0 +1,29 @@
+#calendar-back-button {
+    text-align: left;
+    border-top-left-radius: 10px;
+    border-right: 1px solid black;
+    border-left: 2px solid black;
+}
+
+
+
+#calendar-forward-button {
+    text-align: right;
+    border-top-right-radius: 10px;
+    border-left: 1px solid black;
+    border-right: 2px solid black;
+}
+
+.calendar-controls-row {
+    background-color: #9a9c9b;
+    color: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-bottom: 2%;
+}
+
+#calendar-back-button, #calendar-forward-button {
+    padding: 1%;
+    border-top: 2px solid black;
+    border-bottom: 1px solid black
+}
