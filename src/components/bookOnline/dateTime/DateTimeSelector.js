@@ -2,6 +2,8 @@ import './DateTimeSelector.css';
 import React, { Component } from 'react';
 
 import Calendar from './calendar/Calendar';
+import TimeListing from './timeListing/TimeListing';
+
 
 class DateTimeSelector extends Component {
 

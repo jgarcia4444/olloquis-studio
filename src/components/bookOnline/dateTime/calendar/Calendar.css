@@ -1,3 +1,13 @@
 .calendar-container {
     margin-bottom: 7%;
 }
+
+.calendar-month-row {
+    background-color: #000;
+    padding-top: 1%;
+    color: #fff;
+    border-top: 1px solid black;
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+    border-bottom: 1px solid black;
+}
