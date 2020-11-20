@@ -18,6 +18,7 @@ class DateTimeSelector extends Component {
             ...this.state,
             timeSlots: times
         })
+        this.props.setDateSelected(date)
     }
 
     render() {

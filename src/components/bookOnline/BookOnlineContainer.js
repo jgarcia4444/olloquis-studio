@@ -11,7 +11,13 @@ class BookOnlineContainer extends Component {
         appointmentDetailsStep: "type",
         service: {},
         selectedTime: undefined,
-        loading: false
+        selectedDate: undefined,
+        loading: false,
+        userInfo: {
+            fName: "",
+            lName: "",
+            email: ""
+        }
     }
 
     setServiceSelection = (service) => {
@@ -19,7 +25,7 @@ class BookOnlineContainer extends Component {
             ...this.state,
             appointmentDetailsStep: "dateTime",
             service: service,
-            loading: true
+            loading: true       
         })
     }
 
@@ -31,12 +37,19 @@ class BookOnlineContainer extends Component {
         })
     }
 
+    setDateSelected = (date) => {
+        this.setState({
+            ...this.state,
+            selectedDate: date
+        })
+    }
+
     renderAppointmentInfoContainer = () => {
         switch(this.state.appointmentDetailsStep) {
             case "type":
                 return <AppointmentType handleServiceSelection={this.setServiceSelection}/>
             case "dateTime":
-                return <DateTimeSelector service={this.state.service} setSelectedTime={this.setSelectedTime} />
+                return <DateTimeSelector setDateSelected={this.setDateSelected} service={this.state.service} setSelectedTime={this.setSelectedTime} />
             case "userInfo":
                 return <UserInfo />
             default:
