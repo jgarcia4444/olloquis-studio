@@ -42,9 +42,12 @@ class NavContainer extends Component {
         const navOptions = ["Home", "About", "Book Online", "Shop", "Training", "Contact"]
 
         return (
-            <div className="row text-center nav-container-row"> 
-                {this.renderNavLinks(navOptions)}
+            <div className="container-fluid nav-container">
+                <div className="row text-center nav-container-row"> 
+                    {this.renderNavLinks(navOptions)}
+                </div>
             </div>
+            
         )
     }
 }

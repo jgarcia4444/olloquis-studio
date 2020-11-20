@@ -12,13 +12,14 @@ import {
 import NavContainer from './components/nav/NavContainer';
 import AboutContainer from './components/about/AboutContainer';
 import ContactContainer from './components/contact/ContactContainer';
+import Footer from './components/footer/Footer';
 
 class App extends Component {
 
 
   render() {
     return (
-      <div className="App container">
+      <div className="App container-fluid">
         <Router>
         <NavContainer />
           <Switch>
@@ -41,6 +42,7 @@ class App extends Component {
               <Home />
             </Route>
           </Switch>
+          <Footer />
         </Router>
       </div>
     )

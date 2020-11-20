@@ -1,6 +1,11 @@
-.nav-container-row {
+.nav-container {
     padding: 1%;
     background-color: #9a9c9b;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
 }
 
 .nav-links {
