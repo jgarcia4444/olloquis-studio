@@ -13,28 +13,7 @@ class DateTimeSelector extends Component {
 
     handleDateClick = (date) => {
         console.log(date)
-        let times = [
-            {
-                from: 8,
-                to: 10
-            },
-            {
-                from: 10,
-                to: 12
-            },
-            {
-                from: 12,
-                to: 14
-            },
-            {
-                from: 14,
-                to: 16
-            },
-            {
-                from: 16,
-                to: 18
-            }
-        ]
+        let times = [6, 8, 10, 12, 14, 16]
         this.setState({
             ...this.state,
             timeSlots: times
@@ -51,7 +30,7 @@ class DateTimeSelector extends Component {
                         <Calendar handleDateClick={this.handleDateClick} />
                     </div>
                     <div className="col-3">
-                        <TimeListing timeSlots={this.state.timeSlots} service={this.props.service} />
+                        <TimeListing handleTimeSelection={this.props.setSelectedTime} timeSlots={this.state.timeSlots} service={this.props.service} />
                     </div>
                 </div>
             </div>

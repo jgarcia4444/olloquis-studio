@@ -16,14 +16,14 @@ class TimeSlotCard extends Component {
         }
     }
 
-    formatTime = (timeObject) => {
+    formatTime = (time) => {
 
-        let startTimeString = this.militaryTimeConverter(timeObject.from) 
-        let endTimeString = this.militaryTimeConverter(timeObject.to)
+        let startTimeString = this.militaryTimeConverter(time) 
+        
         console.log(startTimeString)
         return (
-            <div className="time-div">
-                {startTimeString} to {endTimeString}
+            <div onClick={() => this.props.handleTimeSelection(this.props.time)} className="time-div">
+                {startTimeString}
             </div>
         )
         
@@ -32,8 +32,8 @@ class TimeSlotCard extends Component {
     render() {
 
         return (
-            <div className="col-12 time-slot-card-col">
-                {this.formatTime(this.props.timeObject)}
+            <div className="col-6 time-slot-card-col">
+                {this.formatTime(this.props.time)}
             </div>
         )
     }

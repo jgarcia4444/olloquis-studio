@@ -6,10 +6,10 @@ class TimeListing extends Component {
 
     renderTimeSlots = () => {
         if (this.props.timeSlots.length > 0) {
-            return this.props.timeSlots.map((timeObject, i) => {
+            return this.props.timeSlots.map((time, i) => {
                 return (
                     <div key={i} className="row text-center time-slot-card-row">
-                        <TimeSlotCard  timeObject={timeObject} />
+                        <TimeSlotCard handleTimeSelection={this.props.handleTimeSelection} time={time} />
                     </div>
                     
                 )
