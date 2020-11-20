@@ -27,7 +27,7 @@ class BookOnlineContainer extends Component {
             case "type":
                 return <AppointmentType handleServiceSelection={this.setServiceSelection}/>
             case "dateTime":
-                return <DateTimeSelector />
+                return <DateTimeSelector service={this.state.service} />
             case "userInfo":
                 return <UserInfo />
             default:

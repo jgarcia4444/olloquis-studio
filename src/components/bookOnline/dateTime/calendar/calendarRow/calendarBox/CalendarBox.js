@@ -27,14 +27,14 @@ const CalendarBox = (props) => {
     let day = getDayName(date.getDay())
     
     return (
-        <div className="calendar-box-container">
+        <div onClick={() => props.handleDateClick(date)} className="calendar-box-container">
             <div className="row text-center">
-                <div className="col-12">
+                <div className="col-12 day-col">
                     {day}
                 </div>
             </div>
             <div className="row text-center">
-                <div className="col-12">
+                <div className="col-12 date-col">
                     {dateString}
                 </div>
             </div>

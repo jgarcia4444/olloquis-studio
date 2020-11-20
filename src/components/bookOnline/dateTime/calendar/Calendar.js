@@ -121,7 +121,7 @@ class Calendar extends Component {
                                 <h4 id="calendar-month">{month}</h4>
                             </div>
                         </div>
-                        <CalendarRow dates={this.state.dates} />
+                        <CalendarRow handleDateClick={this.props.handleDateClick} dates={this.state.dates} />
                     </div>
                 </div>
             </div>

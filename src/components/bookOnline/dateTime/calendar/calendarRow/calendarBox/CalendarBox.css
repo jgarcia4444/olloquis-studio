@@ -4,4 +4,35 @@
     background-color: #fff;
     font-size: 0.75rem;
     border-top: 1px solid black;
+    border-bottom: 2px solid black;
+}
+
+.calendar-box-container:not(:first-child) {
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+}
+
+.calendar-box-container:not(:last-child) {
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+}
+
+.calendar-box-container:first-child {
+    border-left: 2px solid black;
+    border-right: 1px solid black;
+}
+
+.calendar-box-container:last-child {
+    border-right: 2px solid black;
+    border-left: 1px solid black;
+}
+
+.day-col {
+    margin-top: 10px;
+    font-weight: 900;
+}
+
+.date-col {
+    font-weight: 700;
+    margin-top: 5px;
 }
