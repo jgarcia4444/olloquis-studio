@@ -7,10 +7,11 @@
 } */
 
 #user-info-submit-button {
-    padding: 1%;
+    padding: 2%;
     border-radius: 10px;
     border: 2px solid black;
     box-shadow: -1px 1px 2px 0 #333;
+    font-size: 12px;
 }
 
 #email {

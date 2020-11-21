@@ -28,6 +28,10 @@ class UserInfo extends Component {
     render() {
 
         let { service, selectedTime, selectedDate} = this.props
+        let userName = {
+            fName: this.state.fName,
+            lName: this.state.lName
+        }
 
         return (
             <div className="container">
@@ -51,7 +55,8 @@ class UserInfo extends Component {
                     </div>
                     <div className="row">
                         <div className="col-6">
-                            <AppointmentDetails service={service} selectedTime={selectedTime} selectedDate={selectedDate} />
+                            <AppointmentDetails userName={userName} service={service} selectedTime={selectedTime} selectedDate={selectedDate} />
+                            <small><sup>*</sup>Durations vary</small>
                         </div>
                         <div className="col-6">
                             <div className="container">
