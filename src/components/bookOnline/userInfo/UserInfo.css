@@ -7,12 +7,22 @@
 } */
 
 #user-info-submit-button {
+    background-color: #fff;
     padding: 2%;
     border-radius: 10px;
     border: 2px solid black;
     box-shadow: -1px 1px 2px 0 #333;
-    font-size: 12px;
+    font-size: 16px;
+    font-weight: 100;
 }
+
+#user-info-submit-button:hover {
+    box-shadow: -3px 3px 6px 0 #333;
+}
+
+#user-info-submit-button:active {
+    box-shadow: none;
+} 
 
 #email {
     margin-bottom: 2%;

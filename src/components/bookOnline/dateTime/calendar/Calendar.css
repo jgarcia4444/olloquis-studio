@@ -1,5 +1,17 @@
 .calendar-container {
     margin-bottom: 7%;
+    animation: Opacity-Appear;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
+@keyframes Opacity-Appear {
+    from {
+        opacity: 0.0;
+    }
+    to {
+        opacity: 1.0;
+    }
 }
 
 .calendar-month-row {

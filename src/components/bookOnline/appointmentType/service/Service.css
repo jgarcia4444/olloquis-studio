@@ -1,4 +1,7 @@
 .service-container {
+    animation: Opacity-Appear;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
     background-color: #fff;
     margin: 1%;
     padding: 2%;
@@ -10,9 +13,14 @@
     border-radius: 10px;
 }
 
-/* .service-row {
-    padding: 2%;
-} */
+@keyframes Opacity-Appear {
+    from {
+        opacity: 0.0;
+    }
+    to {
+        opacity: 1.0;
+    }
+}
 
 .duration-and-price-titles {
     font-size: 0.75rem;
