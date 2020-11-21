@@ -1,0 +1,46 @@
+#first-name-input, #last-name-input {
+    margin: 0 auto;
+}
+
+/* #user-info-submit-col {
+    text-align: center;
+} */
+
+#user-info-submit-button {
+    padding: 1%;
+    border-radius: 10px;
+    border: 2px solid black;
+    box-shadow: -1px 1px 2px 0 #333;
+}
+
+#email {
+    margin-bottom: 2%;
+}
+
+#user-info-form {
+    background-color: #9a9c9b;
+    padding: 4%;
+    border-radius: 10px;
+    box-shadow: -3px 3px 6px #333;
+    border-bottom: 3px solid black;
+    border-left: 3px solid black;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.terms-row {
+    margin-bottom: 3%;
+}
+
+#terms-and-policies-details {
+    margin-bottom: 0;
+}
+
+#link-to-terms-and-policies {
+    color: #03f;
+}
+
+#link-to-terms-and-policies:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}

@@ -45,13 +45,14 @@ class BookOnlineContainer extends Component {
     }
 
     renderAppointmentInfoContainer = () => {
+        let {service, selectedTime, selectedDate} = this.state
         switch(this.state.appointmentDetailsStep) {
             case "type":
                 return <AppointmentType handleServiceSelection={this.setServiceSelection}/>
             case "dateTime":
                 return <DateTimeSelector setDateSelected={this.setDateSelected} service={this.state.service} setSelectedTime={this.setSelectedTime} />
             case "userInfo":
-                return <UserInfo />
+                return <UserInfo service={service} selectedTime={selectedTime} selectedDate={selectedDate} />
             default:
                 return <AppointmentType />
         }
