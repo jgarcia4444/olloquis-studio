@@ -1,0 +1,12 @@
+.confirmation-container {
+    margin-top: 10%;
+}
+
+#confirmation-heading, #confirmation-message {
+    font-weight: 100;
+}
+
+#confirmation-message {
+    font-size: 1.25rem;
+    text-align: left;
+}

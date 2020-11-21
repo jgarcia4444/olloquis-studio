@@ -4,6 +4,7 @@ import './BookOnlineContainer.css';
 import AppointmentType from './appointmentType/AppointmentType';
 import DateTimeSelector from './dateTime/DateTimeSelector';
 import UserInfo from './userInfo/UserInfo';
+import ConfirmationPage from './confirmationPage/ConfirmationPage';
 
 class BookOnlineContainer extends Component {
 
@@ -12,11 +13,11 @@ class BookOnlineContainer extends Component {
         service: {},
         selectedTime: undefined,
         selectedDate: undefined,
-        loading: false,
         userInfo: {
             fName: "",
             lName: "",
-            email: ""
+            email: "",
+            agree: false
         }
     }
 
@@ -44,15 +45,27 @@ class BookOnlineContainer extends Component {
         })
     }
 
+    setUserInfo = (userInfo) => {
+        this.setState({
+            ...this.state,
+            appointmentDetailsStep: "confirmationPage",
+            userInfo: {
+                ...userInfo.userInfo
+            }
+        })
+    }
+
     renderAppointmentInfoContainer = () => {
-        let {service, selectedTime, selectedDate} = this.state
+        let {service, selectedTime, selectedDate, userInfo} = this.state
         switch(this.state.appointmentDetailsStep) {
             case "type":
                 return <AppointmentType handleServiceSelection={this.setServiceSelection}/>
             case "dateTime":
                 return <DateTimeSelector setDateSelected={this.setDateSelected} service={this.state.service} setSelectedTime={this.setSelectedTime} />
             case "userInfo":
-                return <UserInfo service={service} selectedTime={selectedTime} selectedDate={selectedDate} />
+                return <UserInfo setUserInfo={this.setUserInfo} service={service} selectedTime={selectedTime} selectedDate={selectedDate} />
+            case "confirmationPage":
+                return <ConfirmationPage service={service} selectedTime={selectedTime} selectedDate={selectedDate} userInfo={userInfo} />
             default:
                 return <AppointmentType />
         }

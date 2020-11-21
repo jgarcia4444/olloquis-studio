@@ -8,19 +8,37 @@ class UserInfo extends Component {
     state = {
         fName: "",
         lName: "",
-        email: ""
+        email: "",
+        agree: false
     }
 
     handleInputChange = (e) => {
-        this.setState({
-            ...this.state,
-            [e.target.name]: e.target.value
-        })
+        console.log(e)
+        if (e.target.name === "agree") {
+            this.setState({
+                ...this.state,
+                agree: !this.state.agree
+            })
+        } else {
+            this.setState({
+                ...this.state,
+                [e.target.name]: e.target.value
+            })
+        }
+        
     }
 
     handleUserInfoSubmit = (e) => {
         e.preventDefault()
-        console.log(e)
+        let appointmentInfoObject = {
+            userInfo: {
+                fName: this.state.fName,
+                lName: this.state.lName,
+                email: this.state.email,
+                agree: this.state.agree
+            }
+        }
+        this.props.setUserInfo(appointmentInfoObject)
     }
 
     
@@ -62,7 +80,7 @@ class UserInfo extends Component {
                             <div className="container">
                                 <div className="row terms-row">
                                     <div className="col-2">
-                                        <input type="checkbox" name="agree" id="agree" required/>
+                                        <input type="checkbox" name="agree" id="agree" onChange={this.handleInputChange} value={this.state.agree} required/>
                                     </div>
                                     <div className="col-10">
                                         <span id="terms-and-policies-details">Checking this box agrees to terms and Covid policies.</span><br/>

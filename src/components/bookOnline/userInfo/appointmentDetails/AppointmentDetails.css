@@ -1,4 +1,5 @@
 #appointment-details-container {
     padding: 2%;
-    background-color: #aaa;
+    background-color: #ddd;
+    border-radius: 10px;
 }
