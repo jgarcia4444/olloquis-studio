@@ -28,7 +28,7 @@ class DateTimeSelector extends Component {
                 <h2 id="calendar-heading">Appointment Calendar</h2>
                 <div className="row calendar-and-time-row">
                     <div className="col-9">
-                        <Calendar handleDateClick={this.handleDateClick} />
+                        <Calendar handleDateClick={this.handleDateClick}  />
                     </div>
                     <div className="col-3">
                         <TimeListing handleTimeSelection={this.props.setSelectedTime} timeSlots={this.state.timeSlots} service={this.props.service} />

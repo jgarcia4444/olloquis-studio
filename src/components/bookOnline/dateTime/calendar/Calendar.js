@@ -7,7 +7,9 @@ class Calendar extends Component {
 
     state = {
         startDate: new Date(),
-        dates: []
+        dates: [],
+        timeListingsByDate: [],
+        unavailableDates: []
     }
 
     componentDidMount() {
@@ -54,11 +56,44 @@ class Calendar extends Component {
             let newDate = new Date(newUTC)
             dates.push(newDate)
         }
+        let dateAvailabiltyObject = this.getUnavailableDates(dates)
         this.setState({
             ...this.state,
             startDate: startDate,
-            dates: dates
+            dates: dates,
+            timeListingByDate: dateAvailabiltyObject.timeListingsByDate,
+            unavailableDates: dateAvailabiltyObject.unavailableDates
         })
+    }
+
+    getUnavailableDates = (dates) => {
+        var unavailableDates = []
+        var timeListingByDate = []
+        dates.forEach(date => {
+            let day_num = date.getDate();
+            let month_num = date.getMonth();
+            fetch(`http://localhost:3000/${month_num}/${day_num}`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data.available === false) {
+                        unavailableDates.push(date)
+                    } else {
+                        let timeListingsByDate = this.setupTimeListingByDate(date, data.time_slots)
+                        timeListingByDate.push(timeListingsByDate)
+                    }
+                })
+        })
+        return {
+            unavailableDates: unavailableDates, 
+            timeListingsByDate: timeListingByDate
+        }
+    }
+
+    setupTimeListingByDate = (date, times) => {
+        return {
+            date: date,
+            availableTimes: times
+        }
     }
 
     monthsMatching = (firstDate, secondDate) => {
