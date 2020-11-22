@@ -61,8 +61,8 @@ class Calendar extends Component {
             ...this.state,
             startDate: startDate,
             dates: dates,
-            timeListingByDate: dateAvailabiltyObject.timeListingsByDate,
-            unavailableDates: dateAvailabiltyObject.unavailableDates
+            // timeListingByDate: dateAvailabiltyObject.timeListingsByDate,
+            // unavailableDates: dateAvailabiltyObject.unavailableDates
         })
     }
 
@@ -72,15 +72,26 @@ class Calendar extends Component {
         dates.forEach(date => {
             let day_num = date.getDate();
             let month_num = date.getMonth();
-            fetch(`http://localhost:3000/${month_num}/${day_num}`)
+            let options = {
+                method: 'GET',
+                headers: {
+                    'Content-type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                mode: 'no-cors'
+            }
+            fetch(`http://localhost:3000/appointments`)
                 .then(res => res.json())
                 .then(data => {
-                    if (data.available === false) {
-                        unavailableDates.push(date)
-                    } else {
-                        let timeListingsByDate = this.setupTimeListingByDate(date, data.time_slots)
-                        timeListingByDate.push(timeListingsByDate)
-                    }
+                    // if (data.available === false) {
+                    //     unavailableDates.push(date)
+                    // } else {
+                    //     let timeListingsByDate = this.setupTimeListingByDate(date, data.time_slots)
+                    //     timeListingByDate.push(timeListingsByDate)
+                    // }
+                    console.log(data)
+                    return data
+                    
                 })
         })
         return {
