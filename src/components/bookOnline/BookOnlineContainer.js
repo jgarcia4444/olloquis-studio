@@ -53,7 +53,37 @@ class BookOnlineContainer extends Component {
                 ...userInfo.userInfo
             }
         })
+        let monthNum = this.state.selectedDate.getMonth()
+        let dayNum = this.state.selectedDate.getDate()
+        let objectForAppointment = {
+            appointment_info: {
+                duration: this.state.service.duration,
+                time_start: this.state.selectedTime,
+                day_number: dayNum,
+                month_number: monthNum,
+                service_name: this.state.service.name,
+                price: parseInt(this.state.service.price),
+                first_name: userInfo.userInfo.fName,
+                last_name: userInfo.userInfo.lName,
+                email: userInfo.userInfo.email
+            }
+        }
+        this.persistAppointmentToDB(objectForAppointment)
     }
+
+    persistAppointmentToDB = (appointmentInfo) => {
+        let options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(appointmentInfo)
+        }
+        fetch("http://localhost:3000/appointments", options)
+            .then(res => res.json())
+            .then(data => console.log(data))
+    } 
 
     renderAppointmentInfoContainer = () => {
         let {service, selectedTime, selectedDate, userInfo} = this.state
