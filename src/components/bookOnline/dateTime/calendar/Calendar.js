@@ -80,7 +80,7 @@ class Calendar extends Component {
                 },
                 mode: 'no-cors'
             }
-            fetch(`http://localhost:3000/appointments`)
+            fetch(`http://localhost:3000/appointments/${month_num}/${day_num}`)
                 .then(res => res.json())
                 .then(data => {
                     // if (data.available === false) {
