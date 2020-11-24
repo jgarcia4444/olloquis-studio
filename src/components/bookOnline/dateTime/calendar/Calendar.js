@@ -67,8 +67,8 @@ class Calendar extends Component {
     getAvailabilty = (dates) => {
         var timeListingByDate = []
         let date = dates[0]
-        let day_num = date.getDate();
-        let month_num = date.getMonth();
+        let day_num = parseInt(date.getDate());
+        let month_num = parseInt(date.getMonth());
         fetch(`http://localhost:3000/appointments/${month_num}/${day_num}`)
             .then(res => res.json())
             .then(data => {
