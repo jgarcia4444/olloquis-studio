@@ -9,7 +9,6 @@ class Calendar extends Component {
         startDate: new Date(),
         dates: [],
         timeListingsByDate: [],
-        unavailableDates: []
     }
 
     componentDidMount() {
@@ -56,48 +55,35 @@ class Calendar extends Component {
             let newDate = new Date(newUTC)
             dates.push(newDate)
         }
-        let dateAvailabiltyObject = this.getUnavailableDates(dates)
+        let dateAvailabiltyObject = this.getAvailabilty(dates)
         this.setState({
             ...this.state,
             startDate: startDate,
             dates: dates,
-            // timeListingByDate: dateAvailabiltyObject.timeListingsByDate,
-            // unavailableDates: dateAvailabiltyObject.unavailableDates
+            timeListingByDate: dateAvailabiltyObject.timeListingsByDate,
         })
     }
 
-    getUnavailableDates = (dates) => {
-        var unavailableDates = []
+    getAvailabilty = (dates) => {
         var timeListingByDate = []
-        dates.forEach(date => {
-            let day_num = date.getDate();
-            let month_num = date.getMonth();
-            let options = {
-                method: 'GET',
-                headers: {
-                    'Content-type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                mode: 'no-cors'
-            }
-            fetch(`http://localhost:3000/appointments/${month_num}/${day_num}`)
-                .then(res => res.json())
-                .then(data => {
-                    // if (data.available === false) {
-                    //     unavailableDates.push(date)
-                    // } else {
-                    //     let timeListingsByDate = this.setupTimeListingByDate(date, data.time_slots)
-                    //     timeListingByDate.push(timeListingsByDate)
-                    // }
+        let date = dates[0]
+        let day_num = date.getDate();
+        let month_num = date.getMonth();
+        fetch(`http://localhost:3000/appointments/${month_num}/${day_num}`)
+            .then(res => res.json())
+            .then(data => {
+                if (data.fetched === true) {
+                    console.log(data.time_listings_by_date)
+                    timeListingByDate = data.time_listings_by_date
+                } else {
                     console.log(data)
-                    return data
-                    
-                })
-        })
-        return {
-            unavailableDates: unavailableDates, 
-            timeListingsByDate: timeListingByDate
-        }
+                    this.setState({
+                        ...this.state,
+                        errorMessage: "Error retrieving availability by dates."
+                    })
+                }
+            })
+        return timeListingByDate
     }
 
     setupTimeListingByDate = (date, times) => {
