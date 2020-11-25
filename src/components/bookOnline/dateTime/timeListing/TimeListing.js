@@ -15,7 +15,7 @@ class TimeListing extends Component {
                 )
             })
         } else {
-            return ""
+            return "No appointments available for the selected date"
         }
     }
 

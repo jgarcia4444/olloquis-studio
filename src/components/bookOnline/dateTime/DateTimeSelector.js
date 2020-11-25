@@ -11,9 +11,7 @@ class DateTimeSelector extends Component {
         timeSlots: []
     }
 
-    handleDateClick = (date) => {
-        console.log(date)
-        let times = [6, 8, 10, 12, 14, 16]
+    handleDateClick = (date, times) => {
         this.setState({
             ...this.state,
             timeSlots: times

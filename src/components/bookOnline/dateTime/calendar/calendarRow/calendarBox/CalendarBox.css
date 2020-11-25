@@ -7,9 +7,24 @@
     border-bottom: 2px solid black;
 }
 
+.open {
+    background-color: rgba(40, 192, 101, 0.5)
+}
+
+.closed {
+    background-color: rgba(192, 18, 18, 0.5)
+}
+
+.open:hover {
+    background-color: rgba(40, 192, 101, 1.0);
+}
+
+.closed:hover {
+    background-color: rgba(192, 18, 18, 1.0)
+}
+
 .calendar-box-container:hover {
     cursor: pointer;
-    background-color: #9a9c9b;
 }
 
 .calendar-box-container:not(:first-child) {

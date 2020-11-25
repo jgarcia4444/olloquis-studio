@@ -8,7 +8,7 @@ class Calendar extends Component {
     state = {
         startDate: new Date(),
         dates: [],
-        timeListingsByDate: [],
+        timeListingsByDate: {},
     }
 
     componentDidMount() {
@@ -55,17 +55,15 @@ class Calendar extends Component {
             let newDate = new Date(newUTC)
             dates.push(newDate)
         }
-        let dateAvailabiltyObject = this.getAvailabilty(dates)
         this.setState({
             ...this.state,
             startDate: startDate,
             dates: dates,
-            timeListingByDate: dateAvailabiltyObject.timeListingsByDate,
         })
+        this.getAvailabilty(dates)
     }
 
     getAvailabilty = (dates) => {
-        var timeListingByDate = []
         let date = dates[0]
         let day_num = parseInt(date.getDate());
         let month_num = parseInt(date.getMonth());
@@ -73,8 +71,11 @@ class Calendar extends Component {
             .then(res => res.json())
             .then(data => {
                 if (data.fetched === true) {
-                    console.log(data.time_listings_by_date)
-                    timeListingByDate = data.time_listings_by_date
+                    console.log(data.time_listings_by_date) 
+                    this.setState({
+                        ...this.state,
+                        timeListingsByDate: data.time_listings_by_date
+                    })
                 } else {
                     console.log(data)
                     this.setState({
@@ -83,15 +84,8 @@ class Calendar extends Component {
                     })
                 }
             })
-        return timeListingByDate
     }
 
-    setupTimeListingByDate = (date, times) => {
-        return {
-            date: date,
-            availableTimes: times
-        }
-    }
 
     monthsMatching = (firstDate, secondDate) => {
         let startDateMonth = firstDate.getMonth()
@@ -153,7 +147,7 @@ class Calendar extends Component {
                                 <h4 id="calendar-month">{month}</h4>
                             </div>
                         </div>
-                        <CalendarRow handleDateClick={this.props.handleDateClick} dates={this.state.dates} />
+                        <CalendarRow timeListingsByDate={this.state.timeListingsByDate} handleDateClick={this.props.handleDateClick} dates={this.state.dates} />
                     </div>
                 </div>
             </div>

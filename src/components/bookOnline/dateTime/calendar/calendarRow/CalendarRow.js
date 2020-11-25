@@ -6,7 +6,7 @@ class CalendarRow extends Component {
 
     renderRow = () => {
         return this.props.dates.map((date, i) => {
-            return <CalendarBox handleDateClick={this.props.handleDateClick} date={date} key={i} />
+            return <CalendarBox timeListingsByDate={this.props.timeListingsByDate[date.getDate()]} handleDateClick={this.props.handleDateClick} date={date} key={i} />
         })
     }
 
