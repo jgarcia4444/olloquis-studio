@@ -39,6 +39,10 @@ const AppointmentDetails = (props) => {
         }
     }
 
+    const capitalizeName = (fName, lName) => {
+        
+    }
+
     return (
         <div className="container" id="appointment-details-container">
             <div className="row text-center">
