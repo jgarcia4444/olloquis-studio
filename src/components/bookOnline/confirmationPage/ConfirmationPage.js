@@ -1,6 +1,5 @@
 import './ConfirmationPage.css';
 import React, { Component } from 'react';
-import Service from '../appointmentType/service/Service';
 
 class ConfirmationPage extends Component {
 
@@ -35,6 +34,13 @@ class ConfirmationPage extends Component {
                         <p id="confirmation-message">
                             Thank you <strong>{this.fullName()}</strong> for booking an appointment. The studio has been notified of your <strong>{this.props.service.name}</strong> on <strong>{this.props.selectedDate.toDateString()}</strong> at <strong>{this.militaryTimeConverter()}</strong> Look out for a confirmation email at <strong>{this.props.userInfo.email}</strong> as well as further instructions due to Covid-19.
                         </p>
+                    </div>
+                </div>
+                <div className="row text-center">
+                    <div className="col-12">
+                        <button onClick={this.props.bookAnotherAppointment} id="book-again-button">
+                            Book Another Appointment
+                        </button>
                     </div>
                 </div>
             </div>

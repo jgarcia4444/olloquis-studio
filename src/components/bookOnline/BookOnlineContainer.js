@@ -21,12 +21,18 @@ class BookOnlineContainer extends Component {
         }
     }
 
+    bookAnotherAppointment = () => {
+        this.setState({
+            ...this.state,
+            appointmentDetailsStep: "type"
+        })
+    } 
+
     setServiceSelection = (service) => {
         this.setState({
             ...this.state,
             appointmentDetailsStep: "dateTime",
-            service: service,
-            loading: true       
+            service: service,  
         })
     }
 
@@ -95,7 +101,7 @@ class BookOnlineContainer extends Component {
             case "userInfo":
                 return <UserInfo setUserInfo={this.setUserInfo} service={service} selectedTime={selectedTime} selectedDate={selectedDate} />
             case "confirmationPage":
-                return <ConfirmationPage service={service} selectedTime={selectedTime} selectedDate={selectedDate} userInfo={userInfo} />
+                return <ConfirmationPage bookAnotherAppointment={this.bookAnotherAppointment} service={service} selectedTime={selectedTime} selectedDate={selectedDate} userInfo={userInfo} />
             default:
                 return <AppointmentType />
         }
