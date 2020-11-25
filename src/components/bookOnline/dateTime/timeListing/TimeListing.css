@@ -5,3 +5,10 @@
 .time-slot-cards-container {
     margin-bottom: 10%;
 }
+
+#no-appointments-message {
+    padding: 10% 10% 4% 10%;
+    background-color: rgba(192, 18, 18, 0.75);
+    border-radius: 10px;
+    box-shadow: 0 0 3px 0 black;
+}

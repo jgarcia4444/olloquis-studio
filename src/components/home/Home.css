@@ -1,8 +1,9 @@
 .Home {
+    margin-top: 5%;
 }
 
 .logo-col {
-    margin-top: 5%;
+margin-bottom: 0;
 }
 
 .logo {
@@ -16,21 +17,25 @@
 }
 
 .home-intro-container, .home-guarantee-container {
-    margin-top: 20%;
+    margin-top: 12%;
     margin-bottom: 5%;
     padding: 5% 5% 2% 5%;
 }
 
+.home-intro-container {
+    border-radius: 10px;
+    background-color: #9a9c9a;
+    box-shadow: 0 0 2px 0 black;
+}
+
 #intro-container-header {
     font-weight: 900;
+    margin-bottom: 5%;
 }
 
 #intro-container-paragraph {
     font-size: 1.15rem;
-}
-
-.lashes-img {
-    width: 100%;
+    font-weight: 100;
 }
 
 .guarantee-details-row {
@@ -42,24 +47,22 @@
     font-weight: 900;
     padding: 2%;
     text-align: center;
-    border-radius: 20px;
-    box-shadow: -2px 7px 6px 0 #000;
-    border-bottom:  7px solid #000 ;
-    border-left: 2px solid #000;
-    border-top: 1px solid #000;
-    border-right: 1px solid #000;
+    border-radius: 10px;
+    border: 2px solid black;
 }
 
 .lashes-img {
-    border-radius: 20px;
-    border-bottom: 7px solid #000;
-    border-left: 2px solid #000;
-    border-top: 1px solid #000;
-    border-right: 1px solid #000;
-    box-shadow: -2px 7px 6px 0 #000;
+    width: 100%;
+    box-shadow: 0 0 2px 0 black;
+    border-radius: 10px;
+    margin-bottom: 3%;
 }
 
 .guarantee-img-col, .guarantee-details-col, .intro-col {
     margin: 0 auto;
+}
+
+#guarantee-details {
+    margin-bottom: 5%;
 }
 
