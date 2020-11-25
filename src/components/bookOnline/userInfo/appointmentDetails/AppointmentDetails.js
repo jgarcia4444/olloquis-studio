@@ -40,14 +40,17 @@ const AppointmentDetails = (props) => {
     }
 
     const capitalizeName = (fName, lName) => {
-        
+        console.log(fName)
+        let capitalizedFName = fName.slice(0,1).toUpperCase() + fName.slice(1).toLowerCase()
+        let capitalizedLName = lName.slice(0,1).toUpperCase() + lName.slice(1).toLowerCase()
+        return capitalizedFName + " " + capitalizedLName
     }
 
     return (
         <div className="container" id="appointment-details-container">
             <div className="row text-center">
                 <div className="col-12">
-                    {userName.fName} {userName.lName}
+                    {capitalizeName(userName.fName, userName.lName)}
                 </div>
             </div>
             <div className="row">
