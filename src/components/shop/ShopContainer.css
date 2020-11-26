@@ -1,0 +1,21 @@
+.shop-container {
+    margin-top: 10%;
+}
+
+.product-image {
+    width: 200px;
+    margin-left: 30px;
+}
+
+.products-container {
+    height: 600px;
+    overflow: auto;
+    border: 1px solid #9a9c9a;
+    padding: 5%;
+    box-shadow: 0 0 5px 0 black;
+}
+
+.product-container {
+    /* background-color: #9a9c9a;
+    padding: 5%; */
+}
