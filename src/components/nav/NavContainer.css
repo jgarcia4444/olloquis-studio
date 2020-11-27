@@ -6,7 +6,7 @@
     left: 0;
     right: 0;
     width: 100%;
-    box-shadow: 0 4px 5px 0 black;
+    box-shadow: 0 0 5px 0 black;
     z-index: 1000;
 }
 

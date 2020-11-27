@@ -1,8 +1,6 @@
 #calendar-back-button {
     text-align: left;
-    border-top-left-radius: 10px;
     border-right: 1px solid black;
-    border-left: 2px solid black;
 }
 
 
@@ -11,7 +9,6 @@
     text-align: right;
     border-top-right-radius: 10px;
     border-left: 1px solid black;
-    border-right: 2px solid black;
 }
 
 .calendar-controls-row {
@@ -23,6 +20,4 @@
 
 #calendar-back-button, #calendar-forward-button {
     padding: 1%;
-    border-top: 2px solid black;
-    border-bottom: 1px solid black
 }

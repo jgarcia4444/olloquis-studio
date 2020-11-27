@@ -10,12 +10,16 @@
 .products-container {
     height: 600px;
     overflow: auto;
-    border: 1px solid #9a9c9a;
     padding: 5%;
-    box-shadow: 0 0 5px 0 black;
+    box-shadow: 0 0 3px 0 black;
+    border-radius: 10px;
+    background-color: #bcbebc;
 }
 
 .product-container {
-    /* background-color: #9a9c9a;
-    padding: 5%; */
+    background-color: #fff;
+    padding: 5%;
+    margin: 3%;
+    border-radius: 10px;
+    box-shadow: 0 0 3px 0 black;
 }

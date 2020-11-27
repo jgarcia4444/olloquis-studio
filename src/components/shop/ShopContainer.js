@@ -33,8 +33,11 @@ class ShopContainer extends Component {
                 return (
                     <div className="row text-center">
                         <div className="col-12 product-col">
+                        <div className="product-container">
                             <h3>{product.name}</h3>
                             <img className="product-image" src={product.imgSRC} alt={product.name} />
+                        </div>
+                            
                         </div>
                     </div>
                 )
