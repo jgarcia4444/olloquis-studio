@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './ShopContainer.css';
 import ProductData from '../../ProductData';
+import Product from './product/Product'
 
 class ShopContainer extends Component {
 
@@ -10,39 +11,18 @@ class ShopContainer extends Component {
 
     renderProducts = (products) => {
         console.log(products)
-        return products.map((product, i) => {
-            if (i % 2 === 0 && i !== products.length - 1) {
-                let nextProduct = products[i + 1]
-                return (
-                    <div className="row">
-                        <div className="col-6 product-col">
-                            <div className="product-container">
-                                <h3>{nextProduct.name}</h3>
-                                <img className="product-image" src={nextProduct.imgSRC} alt={nextProduct.name} />
-                            </div>
-                        </div>
-                        <div className="col-6 product-col">
-                            <div className="product-container">
-                                <h3>{product.name}</h3>
-                                <img className="product-image" src={product.imgSRC} alt={product.name} />
-                            </div>
-                        </div>
-                    </div>
-                )  
-            } else if (i === products.length - 1) {
-                return (
-                    <div className="row text-center">
-                        <div className="col-12 product-col">
-                        <div className="product-container">
-                            <h3>{product.name}</h3>
-                            <img className="product-image" src={product.imgSRC} alt={product.name} />
-                        </div>
-                            
-                        </div>
-                    </div>
-                )
-            }
-        })
+        return (
+            <div className="row">
+                {products.map((product) => {
+            return (
+                <div className="col-6">
+                    <Product product={product} />
+                </div>
+            )  
+        })}
+            </div>
+        )
+        
     }
 
     render() {
