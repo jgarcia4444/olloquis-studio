@@ -1,0 +1,20 @@
+.cart-card-container {
+    width: 7%;
+    position: fixed;
+    top: 100;
+    right: 0;
+    background-color: #9a9c9a;
+    padding: 5px 0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: 0 0 3px 0 black;
+}
+
+.cart-card-container:hover {
+    box-shadow: 0 0 5px 0 black;
+}
+
+#cart-items-total {
+    font-weight: 900;
+    color: #fff;
+}

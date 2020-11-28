@@ -13,6 +13,7 @@ import NavContainer from './components/nav/NavContainer';
 import AboutContainer from './components/about/AboutContainer';
 import ContactContainer from './components/contact/ContactContainer';
 import Footer from './components/footer/Footer';
+import CartCardContainer from './components/cartCard/CartCardContainer';
 
 class App extends Component {
 
@@ -21,7 +22,8 @@ class App extends Component {
     return (
       <div className="App container-fluid">
         <Router>
-        <NavContainer />
+          <NavContainer />
+          <CartCardContainer />
           <Switch>
             <Route path="/training">
               <TrainingContainer />
