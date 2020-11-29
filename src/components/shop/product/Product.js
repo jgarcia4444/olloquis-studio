@@ -29,8 +29,8 @@ class Product extends Component {
         const quantityRange = [...Array(21).keys()];
         return (
             <select onChange={this.handleSelectChange} name="quantitySelect" className="form-control quantity-select" value={this.state.quantitySelect}>
-                {quantityRange.map(quantity => {
-                    return <option className="quantity-selection" name={"quantity_" + quantity} value={quantity}>{quantity}</option>
+                {quantityRange.map((quantity, i) => {
+                    return <option key={i} className="quantity-selection" name={"quantity_" + quantity} value={quantity}>{quantity}</option>
                 })}
             </select>
         )

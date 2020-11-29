@@ -13,9 +13,9 @@ class ShopContainer extends Component {
         console.log(products)
         return (
             <div className="row">
-                {products.map((product) => {
+                {products.map((product, i) => {
             return (
-                <div className="col-6">
+                <div key={i} className="col-6">
                     <Product product={product} />
                 </div>
             )  
