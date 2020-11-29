@@ -2,8 +2,6 @@
     margin-top: 10%;
 }
 
-
-
 .products-container {
     height: 600px;
     overflow: auto;
@@ -13,10 +11,3 @@
     background-color: #bcbebc;
 }
 
-.product-container {
-    background-color: #fff;
-    padding: 5%;
-    margin: 3%;
-    border-radius: 10px;
-    box-shadow: 0 0 3px 0 black;
-}
