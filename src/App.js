@@ -14,6 +14,7 @@ import AboutContainer from './components/about/AboutContainer';
 import ContactContainer from './components/contact/ContactContainer';
 import Footer from './components/footer/Footer';
 import CartCardContainer from './components/cartCard/CartCardContainer';
+import CartDetailsContainer from './components/cartDetailsContainer/CartDetailsContainer';
 
 class App extends Component {
 
@@ -25,6 +26,9 @@ class App extends Component {
           <NavContainer />
           <CartCardContainer />
           <Switch>
+          <Route path="/cart-details" >
+            <CartDetailsContainer />
+          </Route>
             <Route path="/training">
               <TrainingContainer />
             </Route>

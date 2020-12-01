@@ -22,6 +22,14 @@ class Product extends Component {
                 ...this.state,
                 showErrorModal: true
             })
+        } else {
+            this.props.addToCart({
+                quantity: this.state.quantitySelect,
+                product: this.props.product
+            })
+            this.setState({
+                quantitySelect: 0
+            })
         }
     }
 

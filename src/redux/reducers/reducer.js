@@ -7,7 +7,8 @@ export default function reducer(state = defaultState, action) {
         case "ADD_TO_CART":
             // ADD PRODUCT TO CART
             return {
-                ...state
+                ...state,
+                cartItems: state.cartItems.concat(action.item)
             }
         case "REMOVE_FROM_CART":
             // REMOVE PRODUCT FROM CART
