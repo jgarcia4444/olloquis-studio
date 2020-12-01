@@ -1,3 +1,9 @@
 .cart-details-container {
     margin-top: 10%;
 }
+
+.products-in-cart-container {
+    height: 600px;
+    overflow: auto;
+    margin-top: 7%;
+}

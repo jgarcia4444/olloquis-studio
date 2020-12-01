@@ -1,0 +1,8 @@
+.product-in-cart-container {
+    border-bottom: 2px solid black;
+    padding-top: 20px;
+}
+
+.product-in-cart-image {
+    width: 50%;
+}
