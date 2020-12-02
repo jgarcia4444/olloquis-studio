@@ -5,7 +5,6 @@ const defaultState = {
 export default function reducer(state = defaultState, action) {
     switch (action.type) {
         case "ADD_TO_CART":
-            // ADD PRODUCT TO CART
             let duplicateItem = state.cartItems.find(item => item.product.name === action.item.product.name)
             if (duplicateItem !== undefined) {
                 duplicateItem.quantity += action.item.quantity
@@ -22,13 +21,22 @@ export default function reducer(state = defaultState, action) {
                 }
             }
         case "UPDATE_QUANTITY":
-            // UPDATE THE QUANTITY OF THE PRODUCT
-            return {
-                ...state,
-                cartItems: state.cartItems
+            if (parseInt(action.updateObject.newQuantity) === 0) {
+                let filteredCartArray = state.cartItems.filter(item => item.product.name !== action.updateObject.itemName)
+                return {
+                    ...state,
+                    cartItems: filteredCartArray
+                }
+            } else {
+               var itemToUpdate = state.cartItems.find(item => item.product.name === action.updateObject.itemName)
+                itemToUpdate.quantity = action.updateObject.newQuantity
+                return {
+                    ...state,
+                    cartItems: state.cartItems
+                } 
             }
+            
         case "REMOVE_FROM_CART":
-            // REMOVE PRODUCT FROM CART
             console.log("Made it here")
             let cartItemsWithoutRemovedItem = state.cartItems.filter(item => item.product.name !== action.item.product.name)
             return {

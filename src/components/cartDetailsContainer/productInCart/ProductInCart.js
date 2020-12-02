@@ -3,21 +3,33 @@ import React, { Component } from 'react';
 import EditForm from './editForm/EditForm';
 import { connect } from 'react-redux';
 import removeFromCart from '../../../redux/actions/removeFromCart';
+import updateQuantity from '../../../redux/actions/updateQuantity'
 
 class ProductInCart extends Component {
 
     state = {
-        showEditQuantity: false
+        showEditQuantity: false,
     }
 
     handleEditClick = () => {
         this.setState({
+            ...this.state,
             showEditQuantity: true
         })
     }
 
-    updateProductQuantity = (newQuantity) => {
-
+    updateProductQuantity = (selectEle) => {
+        let newValue = selectEle.target.value
+        let { item } = this.props
+        let updateObject = { 
+            newQuantity: newValue, 
+            itemName: item.product.name
+        }
+        this.props.updateQuantity(updateObject)
+        this.setState({
+            ...this.state,
+            showEditQuantity: false
+        })
     }
 
     removeProduct = (item) => {
@@ -39,7 +51,7 @@ class ProductInCart extends Component {
                                     <h3>Quantity: {item.quantity}</h3>
                                 </div>
                                 <div onClick={this.handleEditClick} className="col-2 edit-quantity-col">
-                                {this.state.showEditQuantity ? <EditForm updateQuantity={this.updateProductQuantity} /> : "Edit"}
+                                {this.state.showEditQuantity ? <EditForm item={item} updateProductQuantity={this.updateProductQuantity} /> : "Edit"}
                                 </div>
                                 <div onClick={() => this.removeProduct(item)} className="col-2 delete-item-col">
                                     Remove
@@ -63,7 +75,8 @@ class ProductInCart extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        removeFromCart: (item) => dispatch(removeFromCart(item))
+        removeFromCart: (item) => dispatch(removeFromCart(item)),
+        updateQuantity: (updateObject) => dispatch(updateQuantity(updateObject))
     }
 }
 
