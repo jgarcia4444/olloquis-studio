@@ -1,0 +1,13 @@
+.training-container {
+    margin-top: 10%;
+}
+
+#training-heading {
+    text-align: center;
+    font-weight: 100;
+}
+
+#training-description-col {
+    margin: 5% auto;
+    font-weight: 100;
+}

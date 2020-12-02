@@ -5,5 +5,5 @@
 .products-in-cart-container {
     height: 600px;
     overflow: auto;
-    margin-top: 7%;
+    margin: 7% auto;
 }

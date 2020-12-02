@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Logo from '../../imgs/Logo.png';
 import './Home.css';
-import Lashes from '../../imgs/Lashes.jpeg'
+import Lashes from '../../imgs/Lashes.jpeg';
 
 class Home extends Component {
 
