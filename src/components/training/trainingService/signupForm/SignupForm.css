@@ -1,0 +1,14 @@
+
+
+.form-group>.col-6 {
+    text-align: left;
+}
+
+.signup-form-container {
+    margin-top: 5%;
+}
+
+.licensed-question {
+    font-weight: 100;
+    font-size: 14px;
+}

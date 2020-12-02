@@ -1,4 +1,29 @@
 .training-image {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0 black;
+}
+
+.training-and-signup-row {
+    margin-top: 3%;
+    text-align: center;
+}
+
+.signup-button {
+    margin-top: 5%;
+    box-shadow: 0 0 3px 0 black;
+}
+
+.signup-button:hover {
+    box-shadow: 0 0 7px 0 black;
+}
+
+
+.signup-button:active {
+    box-shadow: none;
+}
+
+.training-name {
+    font-weight: 900;
 }
