@@ -6,3 +6,23 @@
 .product-in-cart-image {
     width: 50%;
 }
+
+.product-in-cart-description {
+    margin-top: 50px;
+}
+
+.delete-item-col, .edit-quantity-col {
+    font-size: 14px;
+}
+
+.edit-quantity-col {
+    color: rgb(23, 39, 255);
+}
+
+.edit-quantity-col:hover, .delete-item-col:hover {
+    cursor: pointer;
+}
+
+.delete-item-col {
+    color: #f00;
+}
