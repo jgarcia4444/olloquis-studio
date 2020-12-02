@@ -1,6 +1,8 @@
 import './ProductInCart.css';
 import React, { Component } from 'react';
 import EditForm from './editForm/EditForm';
+import { connect } from 'react-redux';
+import removeFromCart from '../../../redux/actions/removeFromCart';
 
 class ProductInCart extends Component {
 
@@ -16,6 +18,10 @@ class ProductInCart extends Component {
 
     updateProductQuantity = (newQuantity) => {
 
+    }
+
+    removeProduct = (item) => {
+        this.props.removeFromCart(item)
     }
 
     render() {
@@ -35,7 +41,7 @@ class ProductInCart extends Component {
                                 <div onClick={this.handleEditClick} className="col-2 edit-quantity-col">
                                 {this.state.showEditQuantity ? <EditForm updateQuantity={this.updateProductQuantity} /> : "Edit"}
                                 </div>
-                                <div className="col-2 delete-item-col">
+                                <div onClick={() => this.removeProduct(item)} className="col-2 delete-item-col">
                                     Remove
                                 </div>
                             </div>
@@ -55,4 +61,13 @@ class ProductInCart extends Component {
     }
 }
 
-export default ProductInCart;
+const mapDispatchToProps = dispatch => {
+    return {
+        removeFromCart: (item) => dispatch(removeFromCart(item))
+    }
+}
+
+export default connect(
+    null,
+    mapDispatchToProps
+)(ProductInCart);

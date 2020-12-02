@@ -6,23 +6,14 @@ export default function reducer(state = defaultState, action) {
     switch (action.type) {
         case "ADD_TO_CART":
             // ADD PRODUCT TO CART
-            if (state.cartItems.length > 0) { 
-                var isDuplicate = false
-                var newCartItems = state.cartItems.map(item => {
-                    if (item.product.name === action.item.product.name) {
-                        item.quantity += action.item.quantity
-                        isDuplicate = true
-                        return item
-                    } else {
-                        return item
-                    }
-                })
-                if (!isDuplicate) {
-                    newCartItems.concat(action.item)
-                }
+            let duplicateItem = state.cartItems.find(item => item.product.name === action.item.product.name)
+            if (duplicateItem !== undefined) {
+                duplicateItem.quantity += action.item.quantity
+                var filteredArray = state.cartItems.filter(item => item.product.name !== action.item.product.name)
+                filteredArray.push(duplicateItem)
                 return {
                     ...state,
-                    cartItems: newCartItems
+                    cartItems: filteredArray
                 }
             } else {
                 return {
@@ -30,10 +21,19 @@ export default function reducer(state = defaultState, action) {
                     cartItems: state.cartItems.concat(action.item)
                 }
             }
+        case "UPDATE_QUANTITY":
+            // UPDATE THE QUANTITY OF THE PRODUCT
+            return {
+                ...state,
+                cartItems: state.cartItems
+            }
         case "REMOVE_FROM_CART":
             // REMOVE PRODUCT FROM CART
+            console.log("Made it here")
+            let cartItemsWithoutRemovedItem = state.cartItems.filter(item => item.product.name !== action.item.product.name)
             return {
-                ...state
+                ...state,
+                cartItems: cartItemsWithoutRemovedItem
             }
         default:
             return {

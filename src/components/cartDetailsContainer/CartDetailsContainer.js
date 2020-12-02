@@ -7,9 +7,9 @@ class CartDetailsContainer extends Component {
 
     renderCartProducts = () => {
         const { cart } = this.props;
-        return cart.map(item => {
+        return cart.map((item, i) => {
             return (
-                <ProductInCart item={item} />
+                <ProductInCart key={i} item={item} />
             )
         })
     }
