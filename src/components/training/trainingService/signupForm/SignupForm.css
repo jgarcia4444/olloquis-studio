@@ -5,10 +5,28 @@
 }
 
 .signup-form-container {
-    margin-top: 5%;
+    margin: 5% auto 20% auto;
 }
 
 .licensed-question {
     font-weight: 100;
     font-size: 14px;
+}
+
+.signup-email-col {
+    text-align: left;
+}
+
+.signup-submit-col {
+    margin: 0 auto;
+}
+
+.signup-submit-button {
+    margin: 0 auto;
+    box-shadow: 0 0 3px 0 black;
+}
+
+.signup-submit-button:hover {
+    box-shadow: 0 0 7px 0 black;
+    width: 25%;
 }
