@@ -28,6 +28,7 @@ class SignupForm extends Component {
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
+                    console.log(data)
                     let confirmMessage = `${this.state.fName} ${this.state.lName}, thank you for signing up for ${this.props.name}. We will email you with further instructions.`
                     this.props.setupConfirmationMessage(confirmMessage)
                 } else {
