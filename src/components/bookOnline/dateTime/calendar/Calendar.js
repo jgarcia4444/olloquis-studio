@@ -49,7 +49,7 @@ class Calendar extends Component {
 
     getSevenDays = (startDate) => {
         var dates = [startDate]
-        for (let i = 0; i < 6; i++) {
+        for (let i = 0; i < 29; i++) {
             let previousDate = new Date(dates[i])
             let newUTC = previousDate.setDate(previousDate.getDate() + 1)
             let newDate = new Date(newUTC)
@@ -109,7 +109,7 @@ class Calendar extends Component {
 
     getPreviousSevenDays = (startDate) => {
         let newStartDate = new Date(startDate)
-        newStartDate.setDate(newStartDate.getDate() - 7)
+        newStartDate.setDate(newStartDate.getDate() - 30)
         this.getSevenDays(newStartDate)
     }
 
@@ -129,7 +129,7 @@ class Calendar extends Component {
        } else if (value === "next") {
            let { startDate } = this.state
            let newStartDate = new Date(startDate)
-           newStartDate.setDate(newStartDate.getDate() + 7)
+           newStartDate.setDate(newStartDate.getDate() + 30)
            this.getSevenDays(newStartDate)
        }
     }
