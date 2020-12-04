@@ -45,7 +45,7 @@ class SignupForm extends Component {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
-            body: JSON.stringify(signupObject)
+            body: JSON.stringify({book_training: signupObject})
         }
         return options
     }
