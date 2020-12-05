@@ -12,7 +12,7 @@ class Calendar extends Component {
     }
 
     componentDidMount() {
-        this.getSevenDays(this.state.startDate)
+        this.getThirtyDays(this.state.startDate)
     }
 
     monthOfTheYear = () => {
@@ -47,7 +47,7 @@ class Calendar extends Component {
         }
     }
 
-    getSevenDays = (startDate) => {
+    getThirtyDays = (startDate) => {
         var dates = [startDate]
         for (let i = 0; i < 29; i++) {
             let previousDate = new Date(dates[i])
@@ -97,7 +97,7 @@ class Calendar extends Component {
         }
     }
 
-    sevenDaysToCurrentDay = (firstDate, secondDate) => {
+    thirtyDaysToCurrentDay = (firstDate, secondDate) => {
         let startDateNum = firstDate.getDate()
         let todaysDateNum = secondDate.getDate()
         if (startDateNum - todaysDateNum > 5) {
@@ -107,10 +107,10 @@ class Calendar extends Component {
         }
     }
 
-    getPreviousSevenDays = (startDate) => {
+    getPreviousThirtyDays = (startDate) => {
         let newStartDate = new Date(startDate)
         newStartDate.setDate(newStartDate.getDate() - 30)
-        this.getSevenDays(newStartDate)
+        this.getThirtyDays(newStartDate)
     }
 
     handleControlClick = (value) => {
@@ -118,19 +118,19 @@ class Calendar extends Component {
            let { startDate } = this.state
            let todaysDate = new Date()
            if (this.monthsMatching(startDate, todaysDate)) {
-                if (this.sevenDaysToCurrentDay(startDate, todaysDate)) {
-                    this.getPreviousSevenDays(startDate)
+                if (this.thirtyDaysToCurrentDay(startDate, todaysDate)) {
+                    this.getPreviousThirtyDays(startDate)
                 } else {
-                    this.getSevenDays(todaysDate)
+                    this.getThirtyDays(todaysDate)
                 }
            } else {
-                this.getPreviousSevenDays(startDate)
+                this.getPreviousThirtyDays(startDate)
            }
        } else if (value === "next") {
            let { startDate } = this.state
            let newStartDate = new Date(startDate)
            newStartDate.setDate(newStartDate.getDate() + 30)
-           this.getSevenDays(newStartDate)
+           this.getThirtyDays(newStartDate)
        }
     }
 

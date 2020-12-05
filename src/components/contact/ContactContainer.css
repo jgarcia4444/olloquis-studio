@@ -1,0 +1,21 @@
+.contact-container {
+    margin-top: 10%;
+}
+
+#contact-title {
+    font-size: 4.0rem;
+    font-weight: 100;
+}
+
+.contact-mediums-container {
+    margin-top: 15%;
+}
+
+.medium-imgs {
+    width: 33%;
+}
+
+.medium-title {
+    font-weight: 100;
+    font-size: 2.5rem;
+}
