@@ -11,7 +11,6 @@
     margin-top: 10%;
     border-top: 1px solid #9a9c9a;
     padding-top: 10%;
-    box-shadow: 0 -3px 3px 0 black;
 }
 
 .medium-imgs {
@@ -25,4 +24,21 @@
 .medium-title {
     font-weight: 100;
     font-size: 2.5rem;
+}
+
+#call-link-row {
+    margin-top: 10%;
+}
+
+#call-link {
+    color: #9a9c9a;
+}
+
+#call-link:hover {
+    text-decoration: underline;
+    color: #000;
+}
+
+.policy-row {
+    margin-top: 10%;
 }

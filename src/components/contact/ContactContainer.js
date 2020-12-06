@@ -3,6 +3,7 @@ import './ContactContainer.css'
 import Iphone from '../../imgs/icons/iPhone_SE.png';
 import Email from '../../imgs/icons/email.png';
 import Location from '../../imgs/icons/Location.png';
+import { NavLink  as Link} from 'react-router-dom'
 
 class ContactContainer extends Component {
 
@@ -27,10 +28,13 @@ class ContactContainer extends Component {
                                     </h3>
                                 </div> */}
                                 <div className="col-12">
+                                <a href="tel:+17602381670">
                                     <img className="medium-imgs" src={Iphone} alt="Iphone" />
+                                </a>
+                                    
                                 </div>
                             </div>
-                            <div className="row text-center">
+                            <div id="call-link-row" className="row text-center">
                                 <div className="col-12">
                                     <a href="tel:+17602381670" id="call-link">+1 (760) 238-1670</a>
                                 </div>
@@ -64,6 +68,11 @@ class ContactContainer extends Component {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div className="row text-center policy-row">
+                    <div className="col-12">
+                        <Link to="/policies">See our privacy and covid-19 policies.</Link>
                     </div>
                 </div>
             </div>
