@@ -8,11 +8,18 @@
 }
 
 .contact-mediums-container {
-    margin-top: 15%;
+    margin-top: 10%;
+    border-top: 1px solid #9a9c9a;
+    padding-top: 10%;
+    box-shadow: 0 -3px 3px 0 black;
 }
 
 .medium-imgs {
     width: 33%;
+    box-shadow: 0 0 5px 0 black;
+    border-radius: 50%;
+    background-color: #9a9c9a;
+    padding: 1%;
 }
 
 .medium-title {
